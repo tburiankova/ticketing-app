@@ -7,7 +7,7 @@ export default () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { doRequest, errors } = useRequest({
-    url: '/api/users/signup',
+    url: '/api/users/signin',
     method: 'post',
     body: { email, password },
     onSuccess: () => Router.push('/'),
@@ -20,7 +20,6 @@ export default () => {
 
   return (
     <AuthForm
-      signUp
       onSubmit={onSubmit}
       email={email}
       setEmail={setEmail}
